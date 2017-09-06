@@ -91,7 +91,7 @@ pub struct Credentials {
 }
 
 impl Credentials {
-    /// attemps to resolve credentials from location
+    /// attempts to resolve credentials from location
     /// defined by common google api env var
     /// `GOOGLE_APPLICATION_CREDENTIALS`
     pub fn default() -> Result<Credentials> {
