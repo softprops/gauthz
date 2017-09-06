@@ -63,6 +63,8 @@ use hyper::{Client as HyperClient, Method, Request};
 use hyper::client::Connect;
 use hyper::header::ContentType;
 use medallion::{Algorithm, Header, Payload, Token};
+use std::env;
+use std::fs::File;
 use std::io::Read;
 use std::time::{Duration, Instant};
 
@@ -80,7 +82,7 @@ const TOKEN_URL: &str = "https://www.googleapis.com/oauth2/v4/token";
 //const CLOUD_PLATFORM_SCOPE: &str = "https://www.googleapis.com/auth/cloud-platform";
 
 /// Authentication credential information generated from google api console
-#[derive(Default, Serialize, Deserialize, PartialEq, Debug, Clone)]
+#[derive(Serialize, Deserialize, PartialEq, Debug, Clone)]
 pub struct Credentials {
     /// a pem encoded rsa key
     private_key: String,
@@ -89,6 +91,17 @@ pub struct Credentials {
 }
 
 impl Credentials {
+    /// attemps to resolve credentials from location
+    /// defined by common google api env var
+    /// `GOOGLE_API_CREDENTAILS`
+    pub fn default() -> Result<Credentials> {
+        let file = File::open(
+            env::var("GOOGLE_APPLICATION_CREDENTIALS").map_err(|_| {
+                ErrorKind::Msg("missing GOOGLE_APPLICATION_CREDENTIALS".into())
+            })?,
+        )?;
+        Self::from_reader(file)
+    }
     /// convencience method for parsing credentials from json str
     pub fn from_str(s: &str) -> Result<Credentials> {
         serde_json::from_str(s).map_err(Error::from)
