@@ -271,11 +271,8 @@ impl<C: Connect + Clone> Tokens<C> {
                         Err(match serde_json::from_slice::<ApiError>(&body) {
                             Err(err) => ErrorKind::Codec(err).into(),
                             Ok(err) => {
-                                ErrorKind::Api {
-                                    code: status,
-                                    error: err.error,
-                                    error_description: err.error_description,
-                                }.into()
+                                ErrorKind::Api(err.error, err.error_description)
+                                    .into()
                             }
                         })
                     })

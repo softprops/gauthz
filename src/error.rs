@@ -4,7 +4,6 @@
 //! crate ecosystem
 
 use hyper::Error as HttpError;
-use hyper::StatusCode;
 use serde_json::error::Error as SerdeError;
 use std::io::Error as IoError;
 
@@ -18,12 +17,9 @@ error_chain! {
       errors {
           /// Represents an http response code error, usually related to client
           /// code
-          Api {
-              code: StatusCode,
-              error: String,
-              error_description: String
-          } {
-              description(error_description)
+          Api(error: String, error_description: String) {
+            display("{}: '{}'", error, error_description)
+            description(error_description)
           }
       }
       foreign_links {
@@ -32,3 +28,15 @@ error_chain! {
           IO(IoError) #[doc = "Represents generally IO errors"];
       }
   }
+
+#[cfg(test)]
+mod tests {
+    use super::ErrorKind;
+    #[test]
+    fn api_description() {
+        assert_eq!(
+            ErrorKind::Api("foobar".into(), "it happened".into()).description(),
+            "it happened"
+        )
+    }
+}
