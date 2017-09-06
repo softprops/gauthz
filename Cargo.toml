@@ -2,6 +2,16 @@
 name = "gauthz"
 version = "0.1.0"
 authors = ["softprops <d.tangren@gmail.com>"]
+description = "Google API authentication crate"
+documentation = "https://softprops.github.io/gauthz"
+homepage = "https://github.com/softprops/gauthz"
+repository = "https://github.com/softprops/gauthz"
+keywords = ["gcp", "oauth2", "google", "api"]
+license = "MIT"
+
+[badges]
+travis-ci = { repository = "softprops/gauthz" }
+coveralls = { repository = "softprops/gauthz" }
 
 [dev_dependencies]
 hyper-tls = "0.1"
