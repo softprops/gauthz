@@ -5,7 +5,6 @@
 
 use hyper::Error as HttpError;
 use hyper::StatusCode;
-use hyper::error::UriError;
 use serde_json::error::Error as SerdeError;
 use std::io::Error as IoError;
 
@@ -31,6 +30,5 @@ error_chain! {
           Codec(SerdeError) #[doc = "Represents serialization related errors"];
           Http(HttpError) #[doc = "Represents HTTP protocol level errors"];
           IO(IoError) #[doc = "Represents generally IO errors"];
-          Uri(UriError) #[doc = "Represents URI encoding errors"];
       }
   }

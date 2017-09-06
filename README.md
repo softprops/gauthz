@@ -2,6 +2,8 @@
 
 > google authentication by way of rust
 
+## [Documentation](https://softprops.github.io/gauthz)
+
 ## pronounced
 
 > gawthz
