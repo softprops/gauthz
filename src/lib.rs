@@ -93,7 +93,7 @@ pub struct Credentials {
 impl Credentials {
     /// attemps to resolve credentials from location
     /// defined by common google api env var
-    /// `GOOGLE_API_CREDENTAILS`
+    /// `GOOGLE_APPLICATION_CREDENTIALS`
     pub fn default() -> Result<Credentials> {
         let file = File::open(
             env::var("GOOGLE_APPLICATION_CREDENTIALS").map_err(|_| {
