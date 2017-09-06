@@ -149,6 +149,7 @@ impl AccessToken {
         &self.access_token
     }
     /// returns true if this access token has has expired
+    ///
     /// this is typically one hour in practice
     pub fn expired(&self) -> bool {
         match (self.instant, self.duration) {
