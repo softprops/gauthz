@@ -39,4 +39,12 @@ mod tests {
             "it happened"
         )
     }
+
+    #[test]
+    fn api_display() {
+        assert_eq!(
+            ErrorKind::Api("foobar".into(), "it happened".into()).to_string(),
+            "foobar: 'it happened'"
+        )
+    }
 }
