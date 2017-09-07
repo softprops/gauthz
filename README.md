@@ -59,6 +59,9 @@ fn main() {
 }
 ```
 
+These tokens may be used in `Authorization` HTTP headers to authenticate with
+the Google API's the tokens are scoped to.
+
 ## pronounced
 
 > gawthz
