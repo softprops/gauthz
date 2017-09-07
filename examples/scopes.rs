@@ -393,4 +393,20 @@ fn main() {
     println!("        }}");
     println!("    }}");
     println!("}}");
+    println!("#[cfg(test)]");
+    println!("mod tests {{");
+    println!("    use super::*;");
+    for &(k, v) in sorted.iter() {
+        println!("    #[test]");
+        println!("    fn test_{}() {{", k.to_lowercase());
+        println!("        assert_eq!(\"{}\", Scope::{}.url());", v, k);
+        println!(
+            "        assert_eq!(\"{}\".parse::<Scope>().unwrap(), Scope::{});",
+            v,
+            k
+        );
+        println!("    }}");
+    }
+    println!("}}");
+
 }
