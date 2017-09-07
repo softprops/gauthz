@@ -36,7 +36,7 @@
 //!     vec![Scope::CloudPlatform],
 //!   );
 //!
-//!   // warning this token dispenser never ends!
+//!   // warning: this token dispenser never ends!
 //!   let dispenser = tokens.stream().for_each(|token| {
 //!       println!("{}", token.value());
 //!       Ok(sleep_ms(2000)) // do something interesting
