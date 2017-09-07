@@ -16,7 +16,7 @@
 //! extern crate futures;
 //!
 //! use futures::Stream;
-//! use gauthz::{Credentials, Tokens};
+//! use gauthz::{Credentials, Scope, Tokens};
 //! use hyper::Client;
 //! use hyper_tls::HttpsConnector;
 //! use tokio_core::reactor::Core;
@@ -32,8 +32,8 @@
 //!          ).unwrap()
 //!        )
 //!        .build(&core.handle()),
-//!      Credentials::from_str("{ credential json ... }").unwrap(),
-//!     "https://www.googleapis.com/auth/cloud-platform",
+//!      Credentials::default().unwrap(),
+//!     vec![Scope::CloudPlatform],
 //!   );
 //!
 //!   // warning this token dispenser never ends!
@@ -71,6 +71,8 @@ use std::time::{Duration, Instant};
 pub mod error;
 use error::*;
 pub use error::{Error, Result};
+mod scope;
+pub use scope::*;
 
 /// A `Future` with an error type pinned to `gauthz::Error`
 pub type Future<T> = Box<StdFuture<Item = T, Error = Error>>;
@@ -91,8 +93,8 @@ pub struct Credentials {
 }
 
 impl Credentials {
-    /// attempts to resolve credentials from location
-    /// defined by common google api env var
+    /// Attempts to resolve credentials from location
+    /// defined by common Google API env var
     /// `GOOGLE_APPLICATION_CREDENTIALS`
     pub fn default() -> Result<Credentials> {
         let file = File::open(
@@ -102,11 +104,11 @@ impl Credentials {
         )?;
         Self::from_reader(file)
     }
-    /// convencience method for parsing credentials from json str
+    /// Convenience method for parsing credentials from json str
     pub fn from_str(s: &str) -> Result<Credentials> {
         serde_json::from_str(s).map_err(Error::from)
     }
-    /// convencience method for parsing credentials from a reader
+    /// Convenience method for parsing credentials from a reader
     /// ( i.e. a `std::fs:File` )
     pub fn from_reader<R>(r: R) -> Result<Credentials>
     where
@@ -141,16 +143,16 @@ pub struct AccessToken {
 }
 
 impl AccessToken {
-    /// string value of access token
+    /// Returns string value of access token
     ///
     /// This is typically the value you use for HTTP Authorization: Bearer
     /// header values
     pub fn value(&self) -> &str {
         &self.access_token
     }
-    /// returns true if this access token has has expired
+    /// Returns true if this access token has has expired
     ///
-    /// this is typically one hour in practice
+    /// This is typically one hour in practice
     pub fn expired(&self) -> bool {
         match (self.instant, self.duration) {
             (Some(inst), Some(dur)) => inst.elapsed() >= dur,
@@ -182,24 +184,28 @@ where
 }
 
 impl<C: Connect + Clone> Tokens<C> {
-    /// creates a new instance of `Tokens`
-    pub fn new<S>(
+    /// Creates a new instance of `Tokens`
+    pub fn new<Iter>(
         http: HyperClient<C>,
         credentials: Credentials,
-        scopes: S,
+        scopes: Iter,
     ) -> Self
     where
-        S: Into<String>,
+        Iter: ::std::iter::IntoIterator<Item = Scope>,
     {
         Self {
             http,
             credentials,
-            scopes: scopes.into(),
+            scopes: scopes
+                .into_iter()
+                .map(|s| s.url())
+                .collect::<Vec<_>>()
+                .join(","),
         }
     }
 
-    /// produces a `Stream` of `AccessTokens`. The same `AccessToken` will be
-    /// yieled multiple times until it is expired. After which, a new token
+    /// Returns a `Stream` of `AccessTokens`. The same `AccessToken` will be
+    /// yielded multiple times until it is expired. After which, a new token
     /// will be fetched
     pub fn stream(&self) -> Stream<AccessToken> {
         let instance = self.clone();
@@ -255,7 +261,7 @@ impl<C: Connect + Clone> Tokens<C> {
         req
     }
 
-    /// produces a `Future` yielding a new `AccessToken`
+    /// Returns a `Future` yielding a new `AccessToken`
     pub fn get(&self) -> Future<AccessToken> {
         Box::new(
             self.http

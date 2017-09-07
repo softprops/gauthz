@@ -13,15 +13,16 @@ use gauthz::error::ErrorKind;
 
 fn run() -> Result<String> {
     let mut core = Core::new()?;
-    let tokens = Tokens::new(
-        hyper::Client::configure()
-            .connector(HttpsConnector::new(4, &core.handle()).map_err(|_| {
-                ErrorKind::Msg("failed to create https connector".into())
-            })?)
-            .build(&core.handle()),
-        Credentials::default().unwrap(),
-        "https://www.googleapis.com/auth/cloud-platform",
-    );
+    let tokens =
+        Tokens::new(
+            hyper::Client::configure()
+                .connector(HttpsConnector::new(4, &core.handle()).map_err(|_| {
+                    ErrorKind::Msg("failed to create https connector".into())
+                })?)
+                .build(&core.handle()),
+            Credentials::default().unwrap(),
+            vec!["https://www.googleapis.com/auth/cloud-platform".parse()?],
+        );
     core.run(tokens.get().map(|t| t.value().to_owned()))
 }
 

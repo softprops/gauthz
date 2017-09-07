@@ -15,7 +15,7 @@ pub(crate) struct ApiError {
 
 error_chain! {
       errors {
-          /// Represents an http response code error, usually related to client
+          /// Represents an HTTP response code error, usually related to client
           /// code
           Api(error: String, error_description: String) {
             display("{}: '{}'", error, error_description)
