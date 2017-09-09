@@ -448,6 +448,8 @@ pub enum Scope {
     YtAnalyticsMonetaryReadonly,
     /// Scope for https://www.googleapis.com/auth/yt-analytics.readonly
     YtAnalyticsReadonly,
+    /// A custom API scope
+    Custom(&'static str)
 }
 impl Scope {
     /// Return url assocaited with scope
@@ -1026,6 +1028,7 @@ impl Scope {
             Scope::YtAnalyticsReadonly => {
                 "https://www.googleapis.com/auth/yt-analytics.readonly"
             }
+            Scope::Custom(scope) => scope
         }
     }
     /// Return Scope assocaited with url
