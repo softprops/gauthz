@@ -9,29 +9,18 @@
 //! extern crate gauthz;
 //! // tokio async io
 //! extern crate tokio_core;
-//! // hyper client
-//! extern crate hyper;
-//! extern crate hyper_tls;
 //! // futures combinators
 //! extern crate futures;
 //!
 //! use futures::Stream;
 //! use gauthz::{Credentials, Scope, Tokens};
-//! use hyper::Client;
-//! use hyper_tls::HttpsConnector;
 //! use tokio_core::reactor::Core;
 //! use std::thread::sleep_ms;
 //!
 //! fn main() {
 //!   let mut core = Core::new().unwrap();
 //!   let tokens = Tokens::new(
-//!      Client::configure()
-//!        .connector(
-//!          HttpsConnector::new(
-//!            4, &core.handle().clone()
-//!          ).unwrap()
-//!        )
-//!        .build(&core.handle()),
+//!      &core.handle(),
 //!      Credentials::default().unwrap(),
 //!     vec![Scope::CloudPlatform],
 //!   );
@@ -44,7 +33,12 @@
 //!
 //!   println!("{:#?}", core.run(dispenser))
 //! }
-
+//! ```
+//!
+//! # Cargo features
+//!
+//! This crate has one Cargo feature, `tls`, which adds HTTPS support via the `Tokens::new`
+//! constructor. This feature is enabled by default.
 #![warn(missing_docs)]
 
 #[macro_use]
@@ -57,16 +51,22 @@ extern crate serde;
 extern crate error_chain;
 extern crate futures;
 extern crate hyper;
+#[cfg(feature = "tls")]
+extern crate hyper_tls;
+extern crate tokio_core;
 
 use futures::{Future as StdFuture, Stream as StdStream, future, stream};
 use hyper::{Client as HyperClient, Method, Request};
-use hyper::client::Connect;
+use hyper::client::{Connect, HttpConnector};
 use hyper::header::ContentType;
+#[cfg(feature = "tls")]
+use hyper_tls::HttpsConnector;
 use medallion::{Algorithm, Header, Payload, Token};
 use std::env;
 use std::fs::File;
 use std::io::Read;
 use std::time::{Duration, Instant};
+use tokio_core::reactor::Handle;
 
 pub mod error;
 use error::*;
@@ -81,7 +81,6 @@ pub type Future<T> = Box<StdFuture<Item = T, Error = Error>>;
 pub type Stream<T> = Box<StdStream<Item = T, Error = Error>>;
 
 const TOKEN_URL: &str = "https://www.googleapis.com/oauth2/v4/token";
-//const CLOUD_PLATFORM_SCOPE: &str = "https://www.googleapis.com/auth/cloud-platform";
 
 /// Authentication credential information generated from google api console
 #[derive(Serialize, Deserialize, PartialEq, Debug, Clone)]
@@ -183,9 +182,33 @@ where
     scopes: String,
 }
 
-impl<C: Connect + Clone> Tokens<C> {
-    /// Creates a new instance of `Tokens`
+#[cfg(feature = "tls")]
+impl Tokens<HttpsConnector<HttpConnector>> {
+    /// Creates a new instance of `Tokens` using a `hyper::Client`
+    /// preconfigured for tls.
+    ///
+    /// For client customization use `Tokens::custom` instead
     pub fn new<Iter>(
+        handle: &Handle,
+        credentials: Credentials,
+        scopes: Iter,
+    ) -> Self
+    where
+        Iter: ::std::iter::IntoIterator<Item = Scope>,
+    {
+        let connector = HttpsConnector::new(4, handle).unwrap();
+        let hyper = HyperClient::configure()
+            .connector(connector)
+            .keep_alive(true)
+            .build(handle);
+        Tokens::custom(hyper, credentials, scopes)
+    }
+}
+
+impl<C: Connect + Clone> Tokens<C> {
+    /// Creates a new instance of `Tokens` with a custom `hyper::Client`
+    /// with a customly configured `hyper::Client`
+    pub fn custom<Iter>(
         http: HyperClient<C>,
         credentials: Credentials,
         scopes: Iter,

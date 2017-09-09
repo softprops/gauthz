@@ -1,24 +1,16 @@
-extern crate hyper;
 extern crate futures;
 extern crate gauthz;
 extern crate tokio_core;
-extern crate hyper_tls;
 
 use futures::Future;
-use hyper_tls::HttpsConnector;
 use tokio_core::reactor::Core;
 
 use gauthz::{Credentials, Result, Scope, Tokens};
-use gauthz::error::ErrorKind;
 
 fn run() -> Result<String> {
     let mut core = Core::new()?;
     let tokens = Tokens::new(
-        hyper::Client::configure()
-            .connector(HttpsConnector::new(4, &core.handle()).map_err(|_| {
-                ErrorKind::Msg("failed to create https connector".into())
-            })?)
-            .build(&core.handle()),
+        &core.handle(),
         Credentials::default().unwrap(),
         vec![Scope::CloudPlatform],
     );
