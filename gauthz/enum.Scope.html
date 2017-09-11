@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Scope` enum in crate `gauthz`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Scope">
+
+    <title>gauthz::Scope - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum Scope</p><div class="block items"><ul><li><a href="#variants">Variants</a></li><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>gauthz</a></p><script>window.sidebarCurrent = {name: 'Scope', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>gauthz</a>::<wbr><a class="enum" href=''>Scope</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gauthz/scope.rs.html#20-453' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Scope {
+    Activity,
+    AdexchangeBuyer,
+    AdexchangeSeller,
+    AdexchangeSellerReadonly,
+    AdminDatatransfer,
+    AdminDatatransferReadonly,
+    AdminDirectoryCustomer,
+    AdminDirectoryCustomerReadonly,
+    AdminDirectoryDeviceChromeos,
+    AdminDirectoryDeviceChromeosReadonly,
+    AdminDirectoryDeviceMobile,
+    AdminDirectoryDeviceMobileAction,
+    AdminDirectoryDeviceMobileReadonly,
+    AdminDirectoryDomain,
+    AdminDirectoryDomainReadonly,
+    AdminDirectoryGroup,
+    AdminDirectoryGroupMember,
+    AdminDirectoryGroupMemberReadonly,
+    AdminDirectoryGroupReadonly,
+    AdminDirectoryNotifications,
+    AdminDirectoryOrgunit,
+    AdminDirectoryOrgunitReadonly,
+    AdminDirectoryResourceCalendar,
+    AdminDirectoryResourceCalendarReadonly,
+    AdminDirectoryRolemanagement,
+    AdminDirectoryRolemanagementReadonly,
+    AdminDirectoryUser,
+    AdminDirectoryUserAlias,
+    AdminDirectoryUserAliasReadonly,
+    AdminDirectoryUserReadonly,
+    AdminDirectoryUserSecurity,
+    AdminDirectoryUserschema,
+    AdminDirectoryUserschemaReadonly,
+    AdminReportsAuditReadonly,
+    AdminReportsUsageReadonly,
+    Adsense,
+    AdsenseReadonly,
+    Adsensehost,
+    Analytics,
+    AnalyticsEdit,
+    AnalyticsManageUsers,
+    AnalyticsManageUsersReadonly,
+    AnalyticsProvision,
+    AnalyticsReadonly,
+    Androidenterprise,
+    Androidpublisher,
+    AppengineAdmin,
+    AppsGroupsMigration,
+    AppsGroupsSettings,
+    AppsLicensing,
+    AppsOrder,
+    AppsOrderReadonly,
+    Appstate,
+    Bigquery,
+    BigqueryInsertdata,
+    Blogger,
+    BloggerReadonly,
+    Books,
+    Calendar,
+    CalendarFeeds,
+    CalendarReadonly,
+    ClassroomCourses,
+    ClassroomCoursesReadonly,
+    ClassroomCourseworkMe,
+    ClassroomCourseworkMeReadonly,
+    ClassroomCourseworkStudents,
+    ClassroomCourseworkStudentsReadonly,
+    ClassroomGuardianlinksMeReadonly,
+    ClassroomGuardianlinksStudents,
+    ClassroomGuardianlinksStudentsReadonly,
+    ClassroomProfileEmails,
+    ClassroomProfilePhotos,
+    ClassroomRosters,
+    ClassroomRostersReadonly,
+    ClassroomStudentSubmissionsMeReadonly,
+    ClassroomStudentSubmissionsStudentsReadonly,
+    CloudDebugger,
+    CloudLanguage,
+    CloudPlatform,
+    CloudPlatformReadOnly,
+    CloudTranslation,
+    CloudUseraccounts,
+    CloudUseraccountsReadonly,
+    Cloudruntimeconfig,
+    Compute,
+    ComputeReadonly,
+    Contacts,
+    ContactsReadonly,
+    Content,
+    Datastore,
+    Ddmconversions,
+    DevstorageFullControl,
+    DevstorageReadOnly,
+    DevstorageReadWrite,
+    Dfareporting,
+    Dfatrafficking,
+    Doubleclickbidmanager,
+    Doubleclicksearch,
+    Drive,
+    DriveAppdata,
+    DriveFile,
+    DriveMetadata,
+    DriveMetadataReadonly,
+    DrivePhotosReadonly,
+    DriveReadonly,
+    DriveScripts,
+    Firebase,
+    FirebaseReadonly,
+    FitnessActivityRead,
+    FitnessActivityWrite,
+    FitnessBloodGlucoseRead,
+    FitnessBloodGlucoseWrite,
+    FitnessBloodPressureRead,
+    FitnessBloodPressureWrite,
+    FitnessBodyRead,
+    FitnessBodyTemperatureRead,
+    FitnessBodyTemperatureWrite,
+    FitnessBodyWrite,
+    FitnessLocationRead,
+    FitnessLocationWrite,
+    FitnessNutritionRead,
+    FitnessNutritionWrite,
+    FitnessOxygenSaturationRead,
+    FitnessOxygenSaturationWrite,
+    FitnessReproductiveHealthRead,
+    FitnessReproductiveHealthWrite,
+    Forms,
+    FormsCurrentonly,
+    Fusiontables,
+    FusiontablesReadonly,
+    Games,
+    Genomics,
+    GenomicsReadonly,
+    GlassLocation,
+    GlassTimeline,
+    Gmail,
+    GmailCompose,
+    GmailInsert,
+    GmailLabels,
+    GmailMetadata,
+    GmailModify,
+    GmailReadonly,
+    GmailSend,
+    GmailSettingsBasic,
+    GmailSettingsSharing,
+    Groups,
+    LoggingAdmin,
+    LoggingRead,
+    LoggingWrite,
+    M8Feeds,
+    Manufacturercenter,
+    Monitoring,
+    MonitoringRead,
+    MonitoringWrite,
+    NdevClouddnsReadonly,
+    NdevClouddnsReadwrite,
+    NdevCloudman,
+    NdevCloudmanReadonly,
+    PlaymoviesPartnerReadonly,
+    PlusCirclesRead,
+    PlusCirclesWrite,
+    PlusLogin,
+    PlusMe,
+    PlusMediaUpload,
+    PlusProfilesRead,
+    PlusStreamRead,
+    PlusStreamWrite,
+    Prediction,
+    Presentations,
+    PresentationsReadonly,
+    Pubsub,
+    Replicapool,
+    ReplicapoolReadonly,
+    ServiceManagement,
+    ServiceManagementReadonly,
+    Servicecontrol,
+    Siteverification,
+    SiteverificationVerifyOnly,
+    SourceReadOnly,
+    SourceReadWrite,
+    SpannerAdmin,
+    SpannerData,
+    Spreadsheets,
+    SpreadsheetsReadonly,
+    SqlserviceAdmin,
+    TagmanagerDeleteContainers,
+    TagmanagerEditContainers,
+    TagmanagerEditContainerversions,
+    TagmanagerManageAccounts,
+    TagmanagerManageUsers,
+    TagmanagerPublish,
+    TagmanagerReadonly,
+    Taskqueue,
+    TaskqueueConsumer,
+    Tasks,
+    TasksReadonly,
+    Urlshortener,
+    UserAddressesRead,
+    UserBirthdayRead,
+    UserEmailsRead,
+    UserPhonenumbersRead,
+    UserinfoEmail,
+    UserinfoProfile,
+    UserlocationBeaconRegistry,
+    Webmasters,
+    WebmastersReadonly,
+    XapiZoo,
+    Youtube,
+    YoutubeForceSsl,
+    YoutubeReadonly,
+    YoutubeUpload,
+    Youtubepartner,
+    YoutubepartnerChannelAudit,
+    YtAnalyticsMonetaryReadonly,
+    YtAnalyticsReadonly,
+    Custom(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+}</pre><div class='docblock'><p>API Scope values</p>
+
+<p>For convenience, <code>std::str::FromStr</code> is defined for
+enabling cases where you have the url representing the scope
+and which to call url.parse() to resolve a <code>Scope</code> value</p>
+</div><h2 id='variants' class='variants'>Variants</h2>
+<span id='variant.Activity' class='variant'><span id='Activity.v' class='invisible'><code>Activity</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/activity">https://www.googleapis.com/auth/activity</a></p>
+</div><span id='variant.AdexchangeBuyer' class='variant'><span id='AdexchangeBuyer.v' class='invisible'><code>AdexchangeBuyer</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/adexchange.buyer">https://www.googleapis.com/auth/adexchange.buyer</a></p>
+</div><span id='variant.AdexchangeSeller' class='variant'><span id='AdexchangeSeller.v' class='invisible'><code>AdexchangeSeller</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/adexchange.seller">https://www.googleapis.com/auth/adexchange.seller</a></p>
+</div><span id='variant.AdexchangeSellerReadonly' class='variant'><span id='AdexchangeSellerReadonly.v' class='invisible'><code>AdexchangeSellerReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/adexchange.seller.readonly">https://www.googleapis.com/auth/adexchange.seller.readonly</a></p>
+</div><span id='variant.AdminDatatransfer' class='variant'><span id='AdminDatatransfer.v' class='invisible'><code>AdminDatatransfer</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.datatransfer">https://www.googleapis.com/auth/admin.datatransfer</a></p>
+</div><span id='variant.AdminDatatransferReadonly' class='variant'><span id='AdminDatatransferReadonly.v' class='invisible'><code>AdminDatatransferReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.datatransfer.readonly">https://www.googleapis.com/auth/admin.datatransfer.readonly</a></p>
+</div><span id='variant.AdminDirectoryCustomer' class='variant'><span id='AdminDirectoryCustomer.v' class='invisible'><code>AdminDirectoryCustomer</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.customer">https://www.googleapis.com/auth/admin.directory.customer</a></p>
+</div><span id='variant.AdminDirectoryCustomerReadonly' class='variant'><span id='AdminDirectoryCustomerReadonly.v' class='invisible'><code>AdminDirectoryCustomerReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.customer.readonly">https://www.googleapis.com/auth/admin.directory.customer.readonly</a></p>
+</div><span id='variant.AdminDirectoryDeviceChromeos' class='variant'><span id='AdminDirectoryDeviceChromeos.v' class='invisible'><code>AdminDirectoryDeviceChromeos</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.device.chromeos">https://www.googleapis.com/auth/admin.directory.device.chromeos</a></p>
+</div><span id='variant.AdminDirectoryDeviceChromeosReadonly' class='variant'><span id='AdminDirectoryDeviceChromeosReadonly.v' class='invisible'><code>AdminDirectoryDeviceChromeosReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.device.chromeos.readonly">https://www.googleapis.com/auth/admin.directory.device.chromeos.readonly</a></p>
+</div><span id='variant.AdminDirectoryDeviceMobile' class='variant'><span id='AdminDirectoryDeviceMobile.v' class='invisible'><code>AdminDirectoryDeviceMobile</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.device.mobile">https://www.googleapis.com/auth/admin.directory.device.mobile</a></p>
+</div><span id='variant.AdminDirectoryDeviceMobileAction' class='variant'><span id='AdminDirectoryDeviceMobileAction.v' class='invisible'><code>AdminDirectoryDeviceMobileAction</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.device.mobile.action">https://www.googleapis.com/auth/admin.directory.device.mobile.action</a></p>
+</div><span id='variant.AdminDirectoryDeviceMobileReadonly' class='variant'><span id='AdminDirectoryDeviceMobileReadonly.v' class='invisible'><code>AdminDirectoryDeviceMobileReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.device.mobile.readonly">https://www.googleapis.com/auth/admin.directory.device.mobile.readonly</a></p>
+</div><span id='variant.AdminDirectoryDomain' class='variant'><span id='AdminDirectoryDomain.v' class='invisible'><code>AdminDirectoryDomain</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.domain">https://www.googleapis.com/auth/admin.directory.domain</a></p>
+</div><span id='variant.AdminDirectoryDomainReadonly' class='variant'><span id='AdminDirectoryDomainReadonly.v' class='invisible'><code>AdminDirectoryDomainReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.domain.readonly">https://www.googleapis.com/auth/admin.directory.domain.readonly</a></p>
+</div><span id='variant.AdminDirectoryGroup' class='variant'><span id='AdminDirectoryGroup.v' class='invisible'><code>AdminDirectoryGroup</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.group">https://www.googleapis.com/auth/admin.directory.group</a></p>
+</div><span id='variant.AdminDirectoryGroupMember' class='variant'><span id='AdminDirectoryGroupMember.v' class='invisible'><code>AdminDirectoryGroupMember</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.group.member">https://www.googleapis.com/auth/admin.directory.group.member</a></p>
+</div><span id='variant.AdminDirectoryGroupMemberReadonly' class='variant'><span id='AdminDirectoryGroupMemberReadonly.v' class='invisible'><code>AdminDirectoryGroupMemberReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.group.member.readonly">https://www.googleapis.com/auth/admin.directory.group.member.readonly</a></p>
+</div><span id='variant.AdminDirectoryGroupReadonly' class='variant'><span id='AdminDirectoryGroupReadonly.v' class='invisible'><code>AdminDirectoryGroupReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.group.readonly">https://www.googleapis.com/auth/admin.directory.group.readonly</a></p>
+</div><span id='variant.AdminDirectoryNotifications' class='variant'><span id='AdminDirectoryNotifications.v' class='invisible'><code>AdminDirectoryNotifications</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.notifications">https://www.googleapis.com/auth/admin.directory.notifications</a></p>
+</div><span id='variant.AdminDirectoryOrgunit' class='variant'><span id='AdminDirectoryOrgunit.v' class='invisible'><code>AdminDirectoryOrgunit</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.orgunit">https://www.googleapis.com/auth/admin.directory.orgunit</a></p>
+</div><span id='variant.AdminDirectoryOrgunitReadonly' class='variant'><span id='AdminDirectoryOrgunitReadonly.v' class='invisible'><code>AdminDirectoryOrgunitReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.orgunit.readonly">https://www.googleapis.com/auth/admin.directory.orgunit.readonly</a></p>
+</div><span id='variant.AdminDirectoryResourceCalendar' class='variant'><span id='AdminDirectoryResourceCalendar.v' class='invisible'><code>AdminDirectoryResourceCalendar</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.resource.calendar">https://www.googleapis.com/auth/admin.directory.resource.calendar</a></p>
+</div><span id='variant.AdminDirectoryResourceCalendarReadonly' class='variant'><span id='AdminDirectoryResourceCalendarReadonly.v' class='invisible'><code>AdminDirectoryResourceCalendarReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.resource.calendar.readonly">https://www.googleapis.com/auth/admin.directory.resource.calendar.readonly</a></p>
+</div><span id='variant.AdminDirectoryRolemanagement' class='variant'><span id='AdminDirectoryRolemanagement.v' class='invisible'><code>AdminDirectoryRolemanagement</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.rolemanagement">https://www.googleapis.com/auth/admin.directory.rolemanagement</a></p>
+</div><span id='variant.AdminDirectoryRolemanagementReadonly' class='variant'><span id='AdminDirectoryRolemanagementReadonly.v' class='invisible'><code>AdminDirectoryRolemanagementReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.rolemanagement.readonly">https://www.googleapis.com/auth/admin.directory.rolemanagement.readonly</a></p>
+</div><span id='variant.AdminDirectoryUser' class='variant'><span id='AdminDirectoryUser.v' class='invisible'><code>AdminDirectoryUser</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.user">https://www.googleapis.com/auth/admin.directory.user</a></p>
+</div><span id='variant.AdminDirectoryUserAlias' class='variant'><span id='AdminDirectoryUserAlias.v' class='invisible'><code>AdminDirectoryUserAlias</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.user.alias">https://www.googleapis.com/auth/admin.directory.user.alias</a></p>
+</div><span id='variant.AdminDirectoryUserAliasReadonly' class='variant'><span id='AdminDirectoryUserAliasReadonly.v' class='invisible'><code>AdminDirectoryUserAliasReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.user.alias.readonly">https://www.googleapis.com/auth/admin.directory.user.alias.readonly</a></p>
+</div><span id='variant.AdminDirectoryUserReadonly' class='variant'><span id='AdminDirectoryUserReadonly.v' class='invisible'><code>AdminDirectoryUserReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.user.readonly">https://www.googleapis.com/auth/admin.directory.user.readonly</a></p>
+</div><span id='variant.AdminDirectoryUserSecurity' class='variant'><span id='AdminDirectoryUserSecurity.v' class='invisible'><code>AdminDirectoryUserSecurity</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.user.security">https://www.googleapis.com/auth/admin.directory.user.security</a></p>
+</div><span id='variant.AdminDirectoryUserschema' class='variant'><span id='AdminDirectoryUserschema.v' class='invisible'><code>AdminDirectoryUserschema</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.userschema">https://www.googleapis.com/auth/admin.directory.userschema</a></p>
+</div><span id='variant.AdminDirectoryUserschemaReadonly' class='variant'><span id='AdminDirectoryUserschemaReadonly.v' class='invisible'><code>AdminDirectoryUserschemaReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.directory.userschema.readonly">https://www.googleapis.com/auth/admin.directory.userschema.readonly</a></p>
+</div><span id='variant.AdminReportsAuditReadonly' class='variant'><span id='AdminReportsAuditReadonly.v' class='invisible'><code>AdminReportsAuditReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.reports.audit.readonly">https://www.googleapis.com/auth/admin.reports.audit.readonly</a></p>
+</div><span id='variant.AdminReportsUsageReadonly' class='variant'><span id='AdminReportsUsageReadonly.v' class='invisible'><code>AdminReportsUsageReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/admin.reports.usage.readonly">https://www.googleapis.com/auth/admin.reports.usage.readonly</a></p>
+</div><span id='variant.Adsense' class='variant'><span id='Adsense.v' class='invisible'><code>Adsense</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/adsense">https://www.googleapis.com/auth/adsense</a></p>
+</div><span id='variant.AdsenseReadonly' class='variant'><span id='AdsenseReadonly.v' class='invisible'><code>AdsenseReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/adsense.readonly">https://www.googleapis.com/auth/adsense.readonly</a></p>
+</div><span id='variant.Adsensehost' class='variant'><span id='Adsensehost.v' class='invisible'><code>Adsensehost</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/adsensehost">https://www.googleapis.com/auth/adsensehost</a></p>
+</div><span id='variant.Analytics' class='variant'><span id='Analytics.v' class='invisible'><code>Analytics</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/analytics">https://www.googleapis.com/auth/analytics</a></p>
+</div><span id='variant.AnalyticsEdit' class='variant'><span id='AnalyticsEdit.v' class='invisible'><code>AnalyticsEdit</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/analytics.edit">https://www.googleapis.com/auth/analytics.edit</a></p>
+</div><span id='variant.AnalyticsManageUsers' class='variant'><span id='AnalyticsManageUsers.v' class='invisible'><code>AnalyticsManageUsers</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/analytics.manage.users">https://www.googleapis.com/auth/analytics.manage.users</a></p>
+</div><span id='variant.AnalyticsManageUsersReadonly' class='variant'><span id='AnalyticsManageUsersReadonly.v' class='invisible'><code>AnalyticsManageUsersReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/analytics.manage.users.readonly">https://www.googleapis.com/auth/analytics.manage.users.readonly</a></p>
+</div><span id='variant.AnalyticsProvision' class='variant'><span id='AnalyticsProvision.v' class='invisible'><code>AnalyticsProvision</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/analytics.provision">https://www.googleapis.com/auth/analytics.provision</a></p>
+</div><span id='variant.AnalyticsReadonly' class='variant'><span id='AnalyticsReadonly.v' class='invisible'><code>AnalyticsReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/analytics.readonly">https://www.googleapis.com/auth/analytics.readonly</a></p>
+</div><span id='variant.Androidenterprise' class='variant'><span id='Androidenterprise.v' class='invisible'><code>Androidenterprise</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/androidenterprise">https://www.googleapis.com/auth/androidenterprise</a></p>
+</div><span id='variant.Androidpublisher' class='variant'><span id='Androidpublisher.v' class='invisible'><code>Androidpublisher</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/androidpublisher">https://www.googleapis.com/auth/androidpublisher</a></p>
+</div><span id='variant.AppengineAdmin' class='variant'><span id='AppengineAdmin.v' class='invisible'><code>AppengineAdmin</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/appengine.admin">https://www.googleapis.com/auth/appengine.admin</a></p>
+</div><span id='variant.AppsGroupsMigration' class='variant'><span id='AppsGroupsMigration.v' class='invisible'><code>AppsGroupsMigration</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/apps.groups.migration">https://www.googleapis.com/auth/apps.groups.migration</a></p>
+</div><span id='variant.AppsGroupsSettings' class='variant'><span id='AppsGroupsSettings.v' class='invisible'><code>AppsGroupsSettings</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/apps.groups.settings">https://www.googleapis.com/auth/apps.groups.settings</a></p>
+</div><span id='variant.AppsLicensing' class='variant'><span id='AppsLicensing.v' class='invisible'><code>AppsLicensing</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/apps.licensing">https://www.googleapis.com/auth/apps.licensing</a></p>
+</div><span id='variant.AppsOrder' class='variant'><span id='AppsOrder.v' class='invisible'><code>AppsOrder</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/apps.order">https://www.googleapis.com/auth/apps.order</a></p>
+</div><span id='variant.AppsOrderReadonly' class='variant'><span id='AppsOrderReadonly.v' class='invisible'><code>AppsOrderReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/apps.order.readonly">https://www.googleapis.com/auth/apps.order.readonly</a></p>
+</div><span id='variant.Appstate' class='variant'><span id='Appstate.v' class='invisible'><code>Appstate</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/appstate">https://www.googleapis.com/auth/appstate</a></p>
+</div><span id='variant.Bigquery' class='variant'><span id='Bigquery.v' class='invisible'><code>Bigquery</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/bigquery">https://www.googleapis.com/auth/bigquery</a></p>
+</div><span id='variant.BigqueryInsertdata' class='variant'><span id='BigqueryInsertdata.v' class='invisible'><code>BigqueryInsertdata</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/bigquery.insertdata">https://www.googleapis.com/auth/bigquery.insertdata</a></p>
+</div><span id='variant.Blogger' class='variant'><span id='Blogger.v' class='invisible'><code>Blogger</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/blogger">https://www.googleapis.com/auth/blogger</a></p>
+</div><span id='variant.BloggerReadonly' class='variant'><span id='BloggerReadonly.v' class='invisible'><code>BloggerReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/blogger.readonly">https://www.googleapis.com/auth/blogger.readonly</a></p>
+</div><span id='variant.Books' class='variant'><span id='Books.v' class='invisible'><code>Books</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/books">https://www.googleapis.com/auth/books</a></p>
+</div><span id='variant.Calendar' class='variant'><span id='Calendar.v' class='invisible'><code>Calendar</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/calendar">https://www.googleapis.com/auth/calendar</a></p>
+</div><span id='variant.CalendarFeeds' class='variant'><span id='CalendarFeeds.v' class='invisible'><code>CalendarFeeds</code></span></span><div class='docblock'><p>Scope for <a href="https://www.google.com/calendar/feeds">https://www.google.com/calendar/feeds</a></p>
+</div><span id='variant.CalendarReadonly' class='variant'><span id='CalendarReadonly.v' class='invisible'><code>CalendarReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/calendar.readonly">https://www.googleapis.com/auth/calendar.readonly</a></p>
+</div><span id='variant.ClassroomCourses' class='variant'><span id='ClassroomCourses.v' class='invisible'><code>ClassroomCourses</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/classroom.courses">https://www.googleapis.com/auth/classroom.courses</a></p>
+</div><span id='variant.ClassroomCoursesReadonly' class='variant'><span id='ClassroomCoursesReadonly.v' class='invisible'><code>ClassroomCoursesReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/classroom.courses.readonly">https://www.googleapis.com/auth/classroom.courses.readonly</a></p>
+</div><span id='variant.ClassroomCourseworkMe' class='variant'><span id='ClassroomCourseworkMe.v' class='invisible'><code>ClassroomCourseworkMe</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/classroom.coursework.me">https://www.googleapis.com/auth/classroom.coursework.me</a></p>
+</div><span id='variant.ClassroomCourseworkMeReadonly' class='variant'><span id='ClassroomCourseworkMeReadonly.v' class='invisible'><code>ClassroomCourseworkMeReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/classroom.coursework.me.readonly">https://www.googleapis.com/auth/classroom.coursework.me.readonly</a></p>
+</div><span id='variant.ClassroomCourseworkStudents' class='variant'><span id='ClassroomCourseworkStudents.v' class='invisible'><code>ClassroomCourseworkStudents</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/classroom.coursework.students">https://www.googleapis.com/auth/classroom.coursework.students</a></p>
+</div><span id='variant.ClassroomCourseworkStudentsReadonly' class='variant'><span id='ClassroomCourseworkStudentsReadonly.v' class='invisible'><code>ClassroomCourseworkStudentsReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/classroom.coursework.students.readonly">https://www.googleapis.com/auth/classroom.coursework.students.readonly</a></p>
+</div><span id='variant.ClassroomGuardianlinksMeReadonly' class='variant'><span id='ClassroomGuardianlinksMeReadonly.v' class='invisible'><code>ClassroomGuardianlinksMeReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/classroom.guardianlinks.me.readonly">https://www.googleapis.com/auth/classroom.guardianlinks.me.readonly</a></p>
+</div><span id='variant.ClassroomGuardianlinksStudents' class='variant'><span id='ClassroomGuardianlinksStudents.v' class='invisible'><code>ClassroomGuardianlinksStudents</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/classroom.guardianlinks.students">https://www.googleapis.com/auth/classroom.guardianlinks.students</a></p>
+</div><span id='variant.ClassroomGuardianlinksStudentsReadonly' class='variant'><span id='ClassroomGuardianlinksStudentsReadonly.v' class='invisible'><code>ClassroomGuardianlinksStudentsReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/classroom.guardianlinks.students.readonly">https://www.googleapis.com/auth/classroom.guardianlinks.students.readonly</a></p>
+</div><span id='variant.ClassroomProfileEmails' class='variant'><span id='ClassroomProfileEmails.v' class='invisible'><code>ClassroomProfileEmails</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/classroom.profile.emails">https://www.googleapis.com/auth/classroom.profile.emails</a></p>
+</div><span id='variant.ClassroomProfilePhotos' class='variant'><span id='ClassroomProfilePhotos.v' class='invisible'><code>ClassroomProfilePhotos</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/classroom.profile.photos">https://www.googleapis.com/auth/classroom.profile.photos</a></p>
+</div><span id='variant.ClassroomRosters' class='variant'><span id='ClassroomRosters.v' class='invisible'><code>ClassroomRosters</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/classroom.rosters">https://www.googleapis.com/auth/classroom.rosters</a></p>
+</div><span id='variant.ClassroomRostersReadonly' class='variant'><span id='ClassroomRostersReadonly.v' class='invisible'><code>ClassroomRostersReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/classroom.rosters.readonly">https://www.googleapis.com/auth/classroom.rosters.readonly</a></p>
+</div><span id='variant.ClassroomStudentSubmissionsMeReadonly' class='variant'><span id='ClassroomStudentSubmissionsMeReadonly.v' class='invisible'><code>ClassroomStudentSubmissionsMeReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/classroom.student-submissions.me.readonly">https://www.googleapis.com/auth/classroom.student-submissions.me.readonly</a></p>
+</div><span id='variant.ClassroomStudentSubmissionsStudentsReadonly' class='variant'><span id='ClassroomStudentSubmissionsStudentsReadonly.v' class='invisible'><code>ClassroomStudentSubmissionsStudentsReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/classroom.student-submissions.students.readonly">https://www.googleapis.com/auth/classroom.student-submissions.students.readonly</a></p>
+</div><span id='variant.CloudDebugger' class='variant'><span id='CloudDebugger.v' class='invisible'><code>CloudDebugger</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/cloud_debugger">https://www.googleapis.com/auth/cloud_debugger</a></p>
+</div><span id='variant.CloudLanguage' class='variant'><span id='CloudLanguage.v' class='invisible'><code>CloudLanguage</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/cloud-language">https://www.googleapis.com/auth/cloud-language</a></p>
+</div><span id='variant.CloudPlatform' class='variant'><span id='CloudPlatform.v' class='invisible'><code>CloudPlatform</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/cloud-platform">https://www.googleapis.com/auth/cloud-platform</a></p>
+</div><span id='variant.CloudPlatformReadOnly' class='variant'><span id='CloudPlatformReadOnly.v' class='invisible'><code>CloudPlatformReadOnly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/cloud-platform.read-only">https://www.googleapis.com/auth/cloud-platform.read-only</a></p>
+</div><span id='variant.CloudTranslation' class='variant'><span id='CloudTranslation.v' class='invisible'><code>CloudTranslation</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/cloud-translation">https://www.googleapis.com/auth/cloud-translation</a></p>
+</div><span id='variant.CloudUseraccounts' class='variant'><span id='CloudUseraccounts.v' class='invisible'><code>CloudUseraccounts</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/cloud.useraccounts">https://www.googleapis.com/auth/cloud.useraccounts</a></p>
+</div><span id='variant.CloudUseraccountsReadonly' class='variant'><span id='CloudUseraccountsReadonly.v' class='invisible'><code>CloudUseraccountsReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/cloud.useraccounts.readonly">https://www.googleapis.com/auth/cloud.useraccounts.readonly</a></p>
+</div><span id='variant.Cloudruntimeconfig' class='variant'><span id='Cloudruntimeconfig.v' class='invisible'><code>Cloudruntimeconfig</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/cloudruntimeconfig">https://www.googleapis.com/auth/cloudruntimeconfig</a></p>
+</div><span id='variant.Compute' class='variant'><span id='Compute.v' class='invisible'><code>Compute</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/compute">https://www.googleapis.com/auth/compute</a></p>
+</div><span id='variant.ComputeReadonly' class='variant'><span id='ComputeReadonly.v' class='invisible'><code>ComputeReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/compute.readonly">https://www.googleapis.com/auth/compute.readonly</a></p>
+</div><span id='variant.Contacts' class='variant'><span id='Contacts.v' class='invisible'><code>Contacts</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/contacts">https://www.googleapis.com/auth/contacts</a></p>
+</div><span id='variant.ContactsReadonly' class='variant'><span id='ContactsReadonly.v' class='invisible'><code>ContactsReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/contacts.readonly">https://www.googleapis.com/auth/contacts.readonly</a></p>
+</div><span id='variant.Content' class='variant'><span id='Content.v' class='invisible'><code>Content</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/content">https://www.googleapis.com/auth/content</a></p>
+</div><span id='variant.Datastore' class='variant'><span id='Datastore.v' class='invisible'><code>Datastore</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/datastore">https://www.googleapis.com/auth/datastore</a></p>
+</div><span id='variant.Ddmconversions' class='variant'><span id='Ddmconversions.v' class='invisible'><code>Ddmconversions</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/ddmconversions">https://www.googleapis.com/auth/ddmconversions</a></p>
+</div><span id='variant.DevstorageFullControl' class='variant'><span id='DevstorageFullControl.v' class='invisible'><code>DevstorageFullControl</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/devstorage.full_control">https://www.googleapis.com/auth/devstorage.full_control</a></p>
+</div><span id='variant.DevstorageReadOnly' class='variant'><span id='DevstorageReadOnly.v' class='invisible'><code>DevstorageReadOnly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/devstorage.read_only">https://www.googleapis.com/auth/devstorage.read_only</a></p>
+</div><span id='variant.DevstorageReadWrite' class='variant'><span id='DevstorageReadWrite.v' class='invisible'><code>DevstorageReadWrite</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/devstorage.read_write">https://www.googleapis.com/auth/devstorage.read_write</a></p>
+</div><span id='variant.Dfareporting' class='variant'><span id='Dfareporting.v' class='invisible'><code>Dfareporting</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/dfareporting">https://www.googleapis.com/auth/dfareporting</a></p>
+</div><span id='variant.Dfatrafficking' class='variant'><span id='Dfatrafficking.v' class='invisible'><code>Dfatrafficking</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/dfatrafficking">https://www.googleapis.com/auth/dfatrafficking</a></p>
+</div><span id='variant.Doubleclickbidmanager' class='variant'><span id='Doubleclickbidmanager.v' class='invisible'><code>Doubleclickbidmanager</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/doubleclickbidmanager">https://www.googleapis.com/auth/doubleclickbidmanager</a></p>
+</div><span id='variant.Doubleclicksearch' class='variant'><span id='Doubleclicksearch.v' class='invisible'><code>Doubleclicksearch</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/doubleclicksearch">https://www.googleapis.com/auth/doubleclicksearch</a></p>
+</div><span id='variant.Drive' class='variant'><span id='Drive.v' class='invisible'><code>Drive</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/drive">https://www.googleapis.com/auth/drive</a></p>
+</div><span id='variant.DriveAppdata' class='variant'><span id='DriveAppdata.v' class='invisible'><code>DriveAppdata</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/drive.appdata">https://www.googleapis.com/auth/drive.appdata</a></p>
+</div><span id='variant.DriveFile' class='variant'><span id='DriveFile.v' class='invisible'><code>DriveFile</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/drive.file">https://www.googleapis.com/auth/drive.file</a></p>
+</div><span id='variant.DriveMetadata' class='variant'><span id='DriveMetadata.v' class='invisible'><code>DriveMetadata</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/drive.metadata">https://www.googleapis.com/auth/drive.metadata</a></p>
+</div><span id='variant.DriveMetadataReadonly' class='variant'><span id='DriveMetadataReadonly.v' class='invisible'><code>DriveMetadataReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/drive.metadata.readonly">https://www.googleapis.com/auth/drive.metadata.readonly</a></p>
+</div><span id='variant.DrivePhotosReadonly' class='variant'><span id='DrivePhotosReadonly.v' class='invisible'><code>DrivePhotosReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/drive.photos.readonly">https://www.googleapis.com/auth/drive.photos.readonly</a></p>
+</div><span id='variant.DriveReadonly' class='variant'><span id='DriveReadonly.v' class='invisible'><code>DriveReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/drive.readonly">https://www.googleapis.com/auth/drive.readonly</a></p>
+</div><span id='variant.DriveScripts' class='variant'><span id='DriveScripts.v' class='invisible'><code>DriveScripts</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/drive.scripts">https://www.googleapis.com/auth/drive.scripts</a></p>
+</div><span id='variant.Firebase' class='variant'><span id='Firebase.v' class='invisible'><code>Firebase</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/firebase">https://www.googleapis.com/auth/firebase</a></p>
+</div><span id='variant.FirebaseReadonly' class='variant'><span id='FirebaseReadonly.v' class='invisible'><code>FirebaseReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/firebase.readonly">https://www.googleapis.com/auth/firebase.readonly</a></p>
+</div><span id='variant.FitnessActivityRead' class='variant'><span id='FitnessActivityRead.v' class='invisible'><code>FitnessActivityRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.activity.read">https://www.googleapis.com/auth/fitness.activity.read</a></p>
+</div><span id='variant.FitnessActivityWrite' class='variant'><span id='FitnessActivityWrite.v' class='invisible'><code>FitnessActivityWrite</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.activity.write">https://www.googleapis.com/auth/fitness.activity.write</a></p>
+</div><span id='variant.FitnessBloodGlucoseRead' class='variant'><span id='FitnessBloodGlucoseRead.v' class='invisible'><code>FitnessBloodGlucoseRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.blood_glucose.read">https://www.googleapis.com/auth/fitness.blood_glucose.read</a></p>
+</div><span id='variant.FitnessBloodGlucoseWrite' class='variant'><span id='FitnessBloodGlucoseWrite.v' class='invisible'><code>FitnessBloodGlucoseWrite</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.blood_glucose.write">https://www.googleapis.com/auth/fitness.blood_glucose.write</a></p>
+</div><span id='variant.FitnessBloodPressureRead' class='variant'><span id='FitnessBloodPressureRead.v' class='invisible'><code>FitnessBloodPressureRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.blood_pressure.read">https://www.googleapis.com/auth/fitness.blood_pressure.read</a></p>
+</div><span id='variant.FitnessBloodPressureWrite' class='variant'><span id='FitnessBloodPressureWrite.v' class='invisible'><code>FitnessBloodPressureWrite</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.blood_pressure.write">https://www.googleapis.com/auth/fitness.blood_pressure.write</a></p>
+</div><span id='variant.FitnessBodyRead' class='variant'><span id='FitnessBodyRead.v' class='invisible'><code>FitnessBodyRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.body.read">https://www.googleapis.com/auth/fitness.body.read</a></p>
+</div><span id='variant.FitnessBodyTemperatureRead' class='variant'><span id='FitnessBodyTemperatureRead.v' class='invisible'><code>FitnessBodyTemperatureRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.body_temperature.read">https://www.googleapis.com/auth/fitness.body_temperature.read</a></p>
+</div><span id='variant.FitnessBodyTemperatureWrite' class='variant'><span id='FitnessBodyTemperatureWrite.v' class='invisible'><code>FitnessBodyTemperatureWrite</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.body_temperature.write">https://www.googleapis.com/auth/fitness.body_temperature.write</a></p>
+</div><span id='variant.FitnessBodyWrite' class='variant'><span id='FitnessBodyWrite.v' class='invisible'><code>FitnessBodyWrite</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.body.write">https://www.googleapis.com/auth/fitness.body.write</a></p>
+</div><span id='variant.FitnessLocationRead' class='variant'><span id='FitnessLocationRead.v' class='invisible'><code>FitnessLocationRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.location.read">https://www.googleapis.com/auth/fitness.location.read</a></p>
+</div><span id='variant.FitnessLocationWrite' class='variant'><span id='FitnessLocationWrite.v' class='invisible'><code>FitnessLocationWrite</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.location.write">https://www.googleapis.com/auth/fitness.location.write</a></p>
+</div><span id='variant.FitnessNutritionRead' class='variant'><span id='FitnessNutritionRead.v' class='invisible'><code>FitnessNutritionRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.nutrition.read">https://www.googleapis.com/auth/fitness.nutrition.read</a></p>
+</div><span id='variant.FitnessNutritionWrite' class='variant'><span id='FitnessNutritionWrite.v' class='invisible'><code>FitnessNutritionWrite</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.nutrition.write">https://www.googleapis.com/auth/fitness.nutrition.write</a></p>
+</div><span id='variant.FitnessOxygenSaturationRead' class='variant'><span id='FitnessOxygenSaturationRead.v' class='invisible'><code>FitnessOxygenSaturationRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.oxygen_saturation.read">https://www.googleapis.com/auth/fitness.oxygen_saturation.read</a></p>
+</div><span id='variant.FitnessOxygenSaturationWrite' class='variant'><span id='FitnessOxygenSaturationWrite.v' class='invisible'><code>FitnessOxygenSaturationWrite</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.oxygen_saturation.write">https://www.googleapis.com/auth/fitness.oxygen_saturation.write</a></p>
+</div><span id='variant.FitnessReproductiveHealthRead' class='variant'><span id='FitnessReproductiveHealthRead.v' class='invisible'><code>FitnessReproductiveHealthRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.reproductive_health.read">https://www.googleapis.com/auth/fitness.reproductive_health.read</a></p>
+</div><span id='variant.FitnessReproductiveHealthWrite' class='variant'><span id='FitnessReproductiveHealthWrite.v' class='invisible'><code>FitnessReproductiveHealthWrite</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fitness.reproductive_health.write">https://www.googleapis.com/auth/fitness.reproductive_health.write</a></p>
+</div><span id='variant.Forms' class='variant'><span id='Forms.v' class='invisible'><code>Forms</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/forms">https://www.googleapis.com/auth/forms</a></p>
+</div><span id='variant.FormsCurrentonly' class='variant'><span id='FormsCurrentonly.v' class='invisible'><code>FormsCurrentonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/forms.currentonly">https://www.googleapis.com/auth/forms.currentonly</a></p>
+</div><span id='variant.Fusiontables' class='variant'><span id='Fusiontables.v' class='invisible'><code>Fusiontables</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fusiontables">https://www.googleapis.com/auth/fusiontables</a></p>
+</div><span id='variant.FusiontablesReadonly' class='variant'><span id='FusiontablesReadonly.v' class='invisible'><code>FusiontablesReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/fusiontables.readonly">https://www.googleapis.com/auth/fusiontables.readonly</a></p>
+</div><span id='variant.Games' class='variant'><span id='Games.v' class='invisible'><code>Games</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/games">https://www.googleapis.com/auth/games</a></p>
+</div><span id='variant.Genomics' class='variant'><span id='Genomics.v' class='invisible'><code>Genomics</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/genomics">https://www.googleapis.com/auth/genomics</a></p>
+</div><span id='variant.GenomicsReadonly' class='variant'><span id='GenomicsReadonly.v' class='invisible'><code>GenomicsReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/genomics.readonly">https://www.googleapis.com/auth/genomics.readonly</a></p>
+</div><span id='variant.GlassLocation' class='variant'><span id='GlassLocation.v' class='invisible'><code>GlassLocation</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/glass.location">https://www.googleapis.com/auth/glass.location</a></p>
+</div><span id='variant.GlassTimeline' class='variant'><span id='GlassTimeline.v' class='invisible'><code>GlassTimeline</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/glass.timeline">https://www.googleapis.com/auth/glass.timeline</a></p>
+</div><span id='variant.Gmail' class='variant'><span id='Gmail.v' class='invisible'><code>Gmail</code></span></span><div class='docblock'><p>Scope for <a href="https://mail.google.com/">https://mail.google.com/</a></p>
+</div><span id='variant.GmailCompose' class='variant'><span id='GmailCompose.v' class='invisible'><code>GmailCompose</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/gmail.compose">https://www.googleapis.com/auth/gmail.compose</a></p>
+</div><span id='variant.GmailInsert' class='variant'><span id='GmailInsert.v' class='invisible'><code>GmailInsert</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/gmail.insert">https://www.googleapis.com/auth/gmail.insert</a></p>
+</div><span id='variant.GmailLabels' class='variant'><span id='GmailLabels.v' class='invisible'><code>GmailLabels</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/gmail.labels">https://www.googleapis.com/auth/gmail.labels</a></p>
+</div><span id='variant.GmailMetadata' class='variant'><span id='GmailMetadata.v' class='invisible'><code>GmailMetadata</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/gmail.metadata">https://www.googleapis.com/auth/gmail.metadata</a></p>
+</div><span id='variant.GmailModify' class='variant'><span id='GmailModify.v' class='invisible'><code>GmailModify</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/gmail.modify">https://www.googleapis.com/auth/gmail.modify</a></p>
+</div><span id='variant.GmailReadonly' class='variant'><span id='GmailReadonly.v' class='invisible'><code>GmailReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/gmail.readonly">https://www.googleapis.com/auth/gmail.readonly</a></p>
+</div><span id='variant.GmailSend' class='variant'><span id='GmailSend.v' class='invisible'><code>GmailSend</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/gmail.send">https://www.googleapis.com/auth/gmail.send</a></p>
+</div><span id='variant.GmailSettingsBasic' class='variant'><span id='GmailSettingsBasic.v' class='invisible'><code>GmailSettingsBasic</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/gmail.settings.basic">https://www.googleapis.com/auth/gmail.settings.basic</a></p>
+</div><span id='variant.GmailSettingsSharing' class='variant'><span id='GmailSettingsSharing.v' class='invisible'><code>GmailSettingsSharing</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/gmail.settings.sharing">https://www.googleapis.com/auth/gmail.settings.sharing</a></p>
+</div><span id='variant.Groups' class='variant'><span id='Groups.v' class='invisible'><code>Groups</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/groups">https://www.googleapis.com/auth/groups</a></p>
+</div><span id='variant.LoggingAdmin' class='variant'><span id='LoggingAdmin.v' class='invisible'><code>LoggingAdmin</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/logging.admin">https://www.googleapis.com/auth/logging.admin</a></p>
+</div><span id='variant.LoggingRead' class='variant'><span id='LoggingRead.v' class='invisible'><code>LoggingRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/logging.read">https://www.googleapis.com/auth/logging.read</a></p>
+</div><span id='variant.LoggingWrite' class='variant'><span id='LoggingWrite.v' class='invisible'><code>LoggingWrite</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/logging.write">https://www.googleapis.com/auth/logging.write</a></p>
+</div><span id='variant.M8Feeds' class='variant'><span id='M8Feeds.v' class='invisible'><code>M8Feeds</code></span></span><div class='docblock'><p>Scope for <a href="https://www.google.com/m8/feeds">https://www.google.com/m8/feeds</a></p>
+</div><span id='variant.Manufacturercenter' class='variant'><span id='Manufacturercenter.v' class='invisible'><code>Manufacturercenter</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/manufacturercenter">https://www.googleapis.com/auth/manufacturercenter</a></p>
+</div><span id='variant.Monitoring' class='variant'><span id='Monitoring.v' class='invisible'><code>Monitoring</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/monitoring">https://www.googleapis.com/auth/monitoring</a></p>
+</div><span id='variant.MonitoringRead' class='variant'><span id='MonitoringRead.v' class='invisible'><code>MonitoringRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/monitoring.read">https://www.googleapis.com/auth/monitoring.read</a></p>
+</div><span id='variant.MonitoringWrite' class='variant'><span id='MonitoringWrite.v' class='invisible'><code>MonitoringWrite</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/monitoring.write">https://www.googleapis.com/auth/monitoring.write</a></p>
+</div><span id='variant.NdevClouddnsReadonly' class='variant'><span id='NdevClouddnsReadonly.v' class='invisible'><code>NdevClouddnsReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/ndev.clouddns.readonly">https://www.googleapis.com/auth/ndev.clouddns.readonly</a></p>
+</div><span id='variant.NdevClouddnsReadwrite' class='variant'><span id='NdevClouddnsReadwrite.v' class='invisible'><code>NdevClouddnsReadwrite</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/ndev.clouddns.readwrite">https://www.googleapis.com/auth/ndev.clouddns.readwrite</a></p>
+</div><span id='variant.NdevCloudman' class='variant'><span id='NdevCloudman.v' class='invisible'><code>NdevCloudman</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/ndev.cloudman">https://www.googleapis.com/auth/ndev.cloudman</a></p>
+</div><span id='variant.NdevCloudmanReadonly' class='variant'><span id='NdevCloudmanReadonly.v' class='invisible'><code>NdevCloudmanReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/ndev.cloudman.readonly">https://www.googleapis.com/auth/ndev.cloudman.readonly</a></p>
+</div><span id='variant.PlaymoviesPartnerReadonly' class='variant'><span id='PlaymoviesPartnerReadonly.v' class='invisible'><code>PlaymoviesPartnerReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/playmovies_partner.readonly">https://www.googleapis.com/auth/playmovies_partner.readonly</a></p>
+</div><span id='variant.PlusCirclesRead' class='variant'><span id='PlusCirclesRead.v' class='invisible'><code>PlusCirclesRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/plus.circles.read">https://www.googleapis.com/auth/plus.circles.read</a></p>
+</div><span id='variant.PlusCirclesWrite' class='variant'><span id='PlusCirclesWrite.v' class='invisible'><code>PlusCirclesWrite</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/plus.circles.write">https://www.googleapis.com/auth/plus.circles.write</a></p>
+</div><span id='variant.PlusLogin' class='variant'><span id='PlusLogin.v' class='invisible'><code>PlusLogin</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/plus.login">https://www.googleapis.com/auth/plus.login</a></p>
+</div><span id='variant.PlusMe' class='variant'><span id='PlusMe.v' class='invisible'><code>PlusMe</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/plus.me">https://www.googleapis.com/auth/plus.me</a></p>
+</div><span id='variant.PlusMediaUpload' class='variant'><span id='PlusMediaUpload.v' class='invisible'><code>PlusMediaUpload</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/plus.media.upload">https://www.googleapis.com/auth/plus.media.upload</a></p>
+</div><span id='variant.PlusProfilesRead' class='variant'><span id='PlusProfilesRead.v' class='invisible'><code>PlusProfilesRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/plus.profiles.read">https://www.googleapis.com/auth/plus.profiles.read</a></p>
+</div><span id='variant.PlusStreamRead' class='variant'><span id='PlusStreamRead.v' class='invisible'><code>PlusStreamRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/plus.stream.read">https://www.googleapis.com/auth/plus.stream.read</a></p>
+</div><span id='variant.PlusStreamWrite' class='variant'><span id='PlusStreamWrite.v' class='invisible'><code>PlusStreamWrite</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/plus.stream.write">https://www.googleapis.com/auth/plus.stream.write</a></p>
+</div><span id='variant.Prediction' class='variant'><span id='Prediction.v' class='invisible'><code>Prediction</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/prediction">https://www.googleapis.com/auth/prediction</a></p>
+</div><span id='variant.Presentations' class='variant'><span id='Presentations.v' class='invisible'><code>Presentations</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/presentations">https://www.googleapis.com/auth/presentations</a></p>
+</div><span id='variant.PresentationsReadonly' class='variant'><span id='PresentationsReadonly.v' class='invisible'><code>PresentationsReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/presentations.readonly">https://www.googleapis.com/auth/presentations.readonly</a></p>
+</div><span id='variant.Pubsub' class='variant'><span id='Pubsub.v' class='invisible'><code>Pubsub</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/pubsub">https://www.googleapis.com/auth/pubsub</a></p>
+</div><span id='variant.Replicapool' class='variant'><span id='Replicapool.v' class='invisible'><code>Replicapool</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/replicapool">https://www.googleapis.com/auth/replicapool</a></p>
+</div><span id='variant.ReplicapoolReadonly' class='variant'><span id='ReplicapoolReadonly.v' class='invisible'><code>ReplicapoolReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/replicapool.readonly">https://www.googleapis.com/auth/replicapool.readonly</a></p>
+</div><span id='variant.ServiceManagement' class='variant'><span id='ServiceManagement.v' class='invisible'><code>ServiceManagement</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/service.management">https://www.googleapis.com/auth/service.management</a></p>
+</div><span id='variant.ServiceManagementReadonly' class='variant'><span id='ServiceManagementReadonly.v' class='invisible'><code>ServiceManagementReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/service.management.readonly">https://www.googleapis.com/auth/service.management.readonly</a></p>
+</div><span id='variant.Servicecontrol' class='variant'><span id='Servicecontrol.v' class='invisible'><code>Servicecontrol</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/servicecontrol">https://www.googleapis.com/auth/servicecontrol</a></p>
+</div><span id='variant.Siteverification' class='variant'><span id='Siteverification.v' class='invisible'><code>Siteverification</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/siteverification">https://www.googleapis.com/auth/siteverification</a></p>
+</div><span id='variant.SiteverificationVerifyOnly' class='variant'><span id='SiteverificationVerifyOnly.v' class='invisible'><code>SiteverificationVerifyOnly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/siteverification.verify_only">https://www.googleapis.com/auth/siteverification.verify_only</a></p>
+</div><span id='variant.SourceReadOnly' class='variant'><span id='SourceReadOnly.v' class='invisible'><code>SourceReadOnly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/source.read_only">https://www.googleapis.com/auth/source.read_only</a></p>
+</div><span id='variant.SourceReadWrite' class='variant'><span id='SourceReadWrite.v' class='invisible'><code>SourceReadWrite</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/source.read_write">https://www.googleapis.com/auth/source.read_write</a></p>
+</div><span id='variant.SpannerAdmin' class='variant'><span id='SpannerAdmin.v' class='invisible'><code>SpannerAdmin</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/spanner.admin">https://www.googleapis.com/auth/spanner.admin</a></p>
+</div><span id='variant.SpannerData' class='variant'><span id='SpannerData.v' class='invisible'><code>SpannerData</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/spanner.data">https://www.googleapis.com/auth/spanner.data</a></p>
+</div><span id='variant.Spreadsheets' class='variant'><span id='Spreadsheets.v' class='invisible'><code>Spreadsheets</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/spreadsheets">https://www.googleapis.com/auth/spreadsheets</a></p>
+</div><span id='variant.SpreadsheetsReadonly' class='variant'><span id='SpreadsheetsReadonly.v' class='invisible'><code>SpreadsheetsReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/spreadsheets.readonly">https://www.googleapis.com/auth/spreadsheets.readonly</a></p>
+</div><span id='variant.SqlserviceAdmin' class='variant'><span id='SqlserviceAdmin.v' class='invisible'><code>SqlserviceAdmin</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/sqlservice.admin">https://www.googleapis.com/auth/sqlservice.admin</a></p>
+</div><span id='variant.TagmanagerDeleteContainers' class='variant'><span id='TagmanagerDeleteContainers.v' class='invisible'><code>TagmanagerDeleteContainers</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/tagmanager.delete.containers">https://www.googleapis.com/auth/tagmanager.delete.containers</a></p>
+</div><span id='variant.TagmanagerEditContainers' class='variant'><span id='TagmanagerEditContainers.v' class='invisible'><code>TagmanagerEditContainers</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/tagmanager.edit.containers">https://www.googleapis.com/auth/tagmanager.edit.containers</a></p>
+</div><span id='variant.TagmanagerEditContainerversions' class='variant'><span id='TagmanagerEditContainerversions.v' class='invisible'><code>TagmanagerEditContainerversions</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/tagmanager.edit.containerversions">https://www.googleapis.com/auth/tagmanager.edit.containerversions</a></p>
+</div><span id='variant.TagmanagerManageAccounts' class='variant'><span id='TagmanagerManageAccounts.v' class='invisible'><code>TagmanagerManageAccounts</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/tagmanager.manage.accounts">https://www.googleapis.com/auth/tagmanager.manage.accounts</a></p>
+</div><span id='variant.TagmanagerManageUsers' class='variant'><span id='TagmanagerManageUsers.v' class='invisible'><code>TagmanagerManageUsers</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/tagmanager.manage.users">https://www.googleapis.com/auth/tagmanager.manage.users</a></p>
+</div><span id='variant.TagmanagerPublish' class='variant'><span id='TagmanagerPublish.v' class='invisible'><code>TagmanagerPublish</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/tagmanager.publish">https://www.googleapis.com/auth/tagmanager.publish</a></p>
+</div><span id='variant.TagmanagerReadonly' class='variant'><span id='TagmanagerReadonly.v' class='invisible'><code>TagmanagerReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/tagmanager.readonly">https://www.googleapis.com/auth/tagmanager.readonly</a></p>
+</div><span id='variant.Taskqueue' class='variant'><span id='Taskqueue.v' class='invisible'><code>Taskqueue</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/taskqueue">https://www.googleapis.com/auth/taskqueue</a></p>
+</div><span id='variant.TaskqueueConsumer' class='variant'><span id='TaskqueueConsumer.v' class='invisible'><code>TaskqueueConsumer</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/taskqueue.consumer">https://www.googleapis.com/auth/taskqueue.consumer</a></p>
+</div><span id='variant.Tasks' class='variant'><span id='Tasks.v' class='invisible'><code>Tasks</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/tasks">https://www.googleapis.com/auth/tasks</a></p>
+</div><span id='variant.TasksReadonly' class='variant'><span id='TasksReadonly.v' class='invisible'><code>TasksReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/tasks.readonly">https://www.googleapis.com/auth/tasks.readonly</a></p>
+</div><span id='variant.Urlshortener' class='variant'><span id='Urlshortener.v' class='invisible'><code>Urlshortener</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/urlshortener">https://www.googleapis.com/auth/urlshortener</a></p>
+</div><span id='variant.UserAddressesRead' class='variant'><span id='UserAddressesRead.v' class='invisible'><code>UserAddressesRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/user.addresses.read">https://www.googleapis.com/auth/user.addresses.read</a></p>
+</div><span id='variant.UserBirthdayRead' class='variant'><span id='UserBirthdayRead.v' class='invisible'><code>UserBirthdayRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/user.birthday.read">https://www.googleapis.com/auth/user.birthday.read</a></p>
+</div><span id='variant.UserEmailsRead' class='variant'><span id='UserEmailsRead.v' class='invisible'><code>UserEmailsRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/user.emails.read">https://www.googleapis.com/auth/user.emails.read</a></p>
+</div><span id='variant.UserPhonenumbersRead' class='variant'><span id='UserPhonenumbersRead.v' class='invisible'><code>UserPhonenumbersRead</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/user.phonenumbers.read">https://www.googleapis.com/auth/user.phonenumbers.read</a></p>
+</div><span id='variant.UserinfoEmail' class='variant'><span id='UserinfoEmail.v' class='invisible'><code>UserinfoEmail</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/userinfo.email">https://www.googleapis.com/auth/userinfo.email</a></p>
+</div><span id='variant.UserinfoProfile' class='variant'><span id='UserinfoProfile.v' class='invisible'><code>UserinfoProfile</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/userinfo.profile">https://www.googleapis.com/auth/userinfo.profile</a></p>
+</div><span id='variant.UserlocationBeaconRegistry' class='variant'><span id='UserlocationBeaconRegistry.v' class='invisible'><code>UserlocationBeaconRegistry</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/userlocation.beacon.registry">https://www.googleapis.com/auth/userlocation.beacon.registry</a></p>
+</div><span id='variant.Webmasters' class='variant'><span id='Webmasters.v' class='invisible'><code>Webmasters</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/webmasters">https://www.googleapis.com/auth/webmasters</a></p>
+</div><span id='variant.WebmastersReadonly' class='variant'><span id='WebmastersReadonly.v' class='invisible'><code>WebmastersReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/webmasters.readonly">https://www.googleapis.com/auth/webmasters.readonly</a></p>
+</div><span id='variant.XapiZoo' class='variant'><span id='XapiZoo.v' class='invisible'><code>XapiZoo</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/xapi.zoo">https://www.googleapis.com/auth/xapi.zoo</a></p>
+</div><span id='variant.Youtube' class='variant'><span id='Youtube.v' class='invisible'><code>Youtube</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/youtube">https://www.googleapis.com/auth/youtube</a></p>
+</div><span id='variant.YoutubeForceSsl' class='variant'><span id='YoutubeForceSsl.v' class='invisible'><code>YoutubeForceSsl</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/youtube.force-ssl">https://www.googleapis.com/auth/youtube.force-ssl</a></p>
+</div><span id='variant.YoutubeReadonly' class='variant'><span id='YoutubeReadonly.v' class='invisible'><code>YoutubeReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/youtube.readonly">https://www.googleapis.com/auth/youtube.readonly</a></p>
+</div><span id='variant.YoutubeUpload' class='variant'><span id='YoutubeUpload.v' class='invisible'><code>YoutubeUpload</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/youtube.upload">https://www.googleapis.com/auth/youtube.upload</a></p>
+</div><span id='variant.Youtubepartner' class='variant'><span id='Youtubepartner.v' class='invisible'><code>Youtubepartner</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/youtubepartner">https://www.googleapis.com/auth/youtubepartner</a></p>
+</div><span id='variant.YoutubepartnerChannelAudit' class='variant'><span id='YoutubepartnerChannelAudit.v' class='invisible'><code>YoutubepartnerChannelAudit</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/youtubepartner-channel-audit">https://www.googleapis.com/auth/youtubepartner-channel-audit</a></p>
+</div><span id='variant.YtAnalyticsMonetaryReadonly' class='variant'><span id='YtAnalyticsMonetaryReadonly.v' class='invisible'><code>YtAnalyticsMonetaryReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/yt-analytics-monetary.readonly">https://www.googleapis.com/auth/yt-analytics-monetary.readonly</a></p>
+</div><span id='variant.YtAnalyticsReadonly' class='variant'><span id='YtAnalyticsReadonly.v' class='invisible'><code>YtAnalyticsReadonly</code></span></span><div class='docblock'><p>Scope for <a href="https://www.googleapis.com/auth/yt-analytics.readonly">https://www.googleapis.com/auth/yt-analytics.readonly</a></p>
+</div><span id='variant.Custom' class='variant'><span id='Custom.v' class='invisible'><code>Custom(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>A custom API scope</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="enum" href="../gauthz/enum.Scope.html" title="enum gauthz::Scope">Scope</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gauthz/scope.rs.html#454-1639' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.url' class="method"><span id='url.v' class='invisible'><code>fn <a href='#method.url' class='fnname'>url</a>(&amp;self) -&gt; &amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span></h4>
+<div class='docblock'><p>Return url assocaited with scope</p>
+</div><h4 id='method.scope' class="method"><span id='scope.v' class='invisible'><code>fn <a href='#method.scope' class='fnname'>scope</a>(url: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../gauthz/enum.Scope.html" title="enum gauthz::Scope">Scope</a>&gt;</code></span></h4>
+<div class='docblock'><p>Return Scope assocaited with url</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/str/trait.FromStr.html" title="trait core::str::FromStr">FromStr</a> for <a class="enum" href="../gauthz/enum.Scope.html" title="enum gauthz::Scope">Scope</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gauthz/scope.rs.html#5-10' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Err' class="type"><span id='Err.t' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/str/trait.FromStr.html#associatedtype.Err' class="type">Err</a> = <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span></h4>
+<div class='docblock'><p>The associated error which can be returned from parsing.</p>
+</div><h4 id='method.from_str' class="method"><span id='from_str.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/str/trait.FromStr.html#tymethod.from_str' class='fnname'>from_str</a>(url: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="enum" href="../gauthz/enum.Scope.html" title="enum gauthz::Scope">Scope</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h4>
+<div class='docblock'><p>Parses a string <code>s</code> to return a value of this type. <a href="https://doc.rust-lang.org/nightly/core/str/trait.FromStr.html#tymethod.from_str">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../gauthz/enum.Scope.html" title="enum gauthz::Scope">Scope</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gauthz/scope.rs.html#19' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../gauthz/enum.Scope.html" title="enum gauthz::Scope">Scope</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gauthz/scope.rs.html#19' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../gauthz/enum.Scope.html" title="enum gauthz::Scope">Scope</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../gauthz/enum.Scope.html" title="enum gauthz::Scope">Scope</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gauthz";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
