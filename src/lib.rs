@@ -1,4 +1,4 @@
-//! An interface for fetch Google API tokens targetting
+//! An interface for fetching Google API tokens targeting
 //! [Server to Server](https://developers.google.com/identity/protocols/OAuth2ServiceAccount)
 //! applications
 //!
