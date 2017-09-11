@@ -8,6 +8,7 @@ homepage = "https://github.com/softprops/gauthz"
 repository = "https://github.com/softprops/gauthz"
 keywords = ["gcp", "oauth2", "google", "api"]
 license = "MIT"
+readme = "README.md"
 
 [badges]
 travis-ci = { repository = "softprops/gauthz" }
