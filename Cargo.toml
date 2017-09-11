@@ -13,9 +13,6 @@ license = "MIT"
 travis-ci = { repository = "softprops/gauthz" }
 coveralls = { repository = "softprops/gauthz" }
 
-[dev_dependencies]
-hyper-tls = "0.1"
-
 [dependencies]
 error-chain = "0.10"
 futures = "0.1"

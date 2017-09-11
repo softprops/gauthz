@@ -46,7 +46,6 @@ extern crate serde_derive;
 extern crate medallion;
 extern crate serde_json;
 extern crate time;
-extern crate serde;
 #[macro_use]
 extern crate error_chain;
 extern crate futures;
@@ -55,6 +54,11 @@ extern crate hyper;
 extern crate hyper_tls;
 extern crate tokio_core;
 
+use std::env;
+use std::fs::File;
+use std::io::Read;
+use std::time::{Duration, Instant};
+
 use futures::{Future as StdFuture, Stream as StdStream, future, stream};
 use hyper::{Client as HyperClient, Method, Request};
 use hyper::client::{Connect, HttpConnector};
@@ -62,10 +66,6 @@ use hyper::header::ContentType;
 #[cfg(feature = "tls")]
 use hyper_tls::HttpsConnector;
 use medallion::{Algorithm, Header, Payload, Token};
-use std::env;
-use std::fs::File;
-use std::io::Read;
-use std::time::{Duration, Instant};
 use tokio_core::reactor::Handle;
 
 pub mod error;
